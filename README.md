@@ -1,5 +1,4 @@
 # ZURB TwentyTwenty
-===================
 
 Need to highlight the differences between two images? [TwentyTwenty](http://zurb.com/playground/twentytwenty), a visual diff tool, makes it easy to spot them!
 
