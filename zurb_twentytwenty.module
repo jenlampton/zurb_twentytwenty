@@ -122,17 +122,17 @@ function zurb_twentytwenty_field_formatter_view($entity_type, $entity, $field, $
   $images = array();
   $element = array();
 
-  $twentytwenty_path = libraries_get_path('twentytwenty');
-  drupal_add_css($twentytwenty_path . '/css/twentytwenty.css', array('scope' => 'footer', 'weight' => 110));
-  drupal_add_js($twentytwenty_path . '/js/jquery.event.move.js', array('scope' => 'footer', 'weight' => 100));
-  drupal_add_js($twentytwenty_path . '/js/jquery.twentytwenty.js', array('scope' => 'footer', 'weight' => 110));
-  drupal_add_js('jQuery(window).load(function () { jQuery(".twentytwenty-container").twentytwenty({default_offset_pct: ' . $settings['default_offset_pct'] . '}); });', array('type' => 'inline', 'scope' => 'footer', 'weight' => 120));
+  $twentytwenty_path = backdrop_get_path('module', 'zurb_twentytwenty') . '/plugin/';
+  backdrop_add_css($twentytwenty_path . '/css/twentytwenty.css', array('scope' => 'footer', 'weight' => 110));
+  backdrop_add_js($twentytwenty_path . '/js/jquery.event.move.js', array('scope' => 'footer', 'weight' => 100));
+  backdrop_add_js($twentytwenty_path . '/js/jquery.twentytwenty.js', array('scope' => 'footer', 'weight' => 110));
+  backdrop_add_js('jQuery(window).load(function () { jQuery(".twentytwenty-container").twentytwenty({default_offset_pct: ' . $settings['default_offset_pct'] . '}); });', array('type' => 'inline', 'scope' => 'footer', 'weight' => 120));
 
   if (count($items)) {
     foreach ($items as $item) {
       $item['path'] = $item['uri'];
 
-      if (isset($settings['image_style']) && drupal_strlen($settings['image_style'])) {
+      if (isset($settings['image_style']) && backdrop_strlen($settings['image_style'])) {
         $item['style_name'] = $settings['image_style'];
         $images[] = theme('image_style', $item);
       }

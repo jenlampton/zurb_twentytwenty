@@ -1,6 +1,8 @@
 name = ZURB: TwentyTwenty
 description = Provides a field formatter to format an image field to leverage the TwentyTwenty plugin from ZURB.
-core = 7.x
+package = fields
+backdrop = 1.x
+type = module
 
 dependencies[] = image
-dependencies[] = libraries
+
